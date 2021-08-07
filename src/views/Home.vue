@@ -2,7 +2,10 @@
   <div class="home">
     <q-from :model="userInfo" :rules="rules" ref="loginFrom">
       <q-from-item label="用户名" prop="username">
+        <aaa>
+
         <q-input  v-model="userInfo.username" placeholder="请输入用户名" />
+        </aaa>
       </q-from-item>
       <q-from-item label="密码" prop="password">
         <q-input type="password" v-model="userInfo.password" placeholder="请输入密码" />
@@ -15,13 +18,12 @@
 </template>
 
 <script>
-
-
+import aaa from './Aaa.vue'
 export default {
   name: "Home",
 
   components: {
- 
+    aaa
   },
   data() {
     return {

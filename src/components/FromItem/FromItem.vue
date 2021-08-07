@@ -10,6 +10,7 @@
   import Schema from 'async-validator';
   export default {
     name: 'QFromItem',
+    componentName: 'QFromItem',
     inject: ['from'],
     provide() {
       return {

@@ -3,10 +3,12 @@
 </template>
 
 <script>
+import emitter from '../../utils/mixins/emitter'
 export default {
   name: 'QInput',
   inheritAttrs: false,
   inject: ['fromItem'],
+  mixins: [emitter],
   props: {
     value: {
       type: [Number,String],
@@ -15,9 +17,7 @@ export default {
   methods: {
     onInput(e) {
       this.$emit('input', e.target.value)
-      if (this.fromItem) {
-        this.fromItem.$emit('validate')
-      }
+        this.dispatch('QFromItem', 'validate', [])
     },
    
   },

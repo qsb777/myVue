@@ -4,9 +4,22 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <p @click="$store.commit('user/add',1)">数量：{{$store.state.user.count}}</p>
+    <p @click="$store.dispatch('user/add',1)">异步数量：{{$store.state.user.count}}</p>
+    <!-- <p>双倍数量：{{$store.getters['user/debCount']}}</p> -->
     <router-view/>
   </div>
 </template>
+
+
+
+<script>
+export default {
+  mounted () {
+    console.log(this.$store)
+  },
+}
+</script>
 
 <style>
 #app {
